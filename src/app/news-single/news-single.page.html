@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/news"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="article">{{ article.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="article">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card position="floating">
+          <ion-img [src]="article.urlToImage"></ion-img>
+      
+          <ion-card-content>
+            <ion-card-title>{{ article.title }}</ion-card-title>
+            <p>{{ article.description }}</p>
+          </ion-card-content>
+      
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

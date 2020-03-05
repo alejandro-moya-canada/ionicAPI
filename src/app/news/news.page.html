@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>News</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- 
+  <ion-card *ngFor="let article of data?.articles"> 
+  interpreta que puede ser un valor nulo con ?
+-->
+<ion-content *ngIf="data">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card *ngFor="let article of data.articles" (click)="onGoToNewsSinglePage(article)">
+
+          <ion-card-content>
+            <ion-card-title>{{ article.title }}</ion-card-title>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
